@@ -10,6 +10,7 @@ import ProductCard from "./components/ProductCard";
 
 export default function Products() {
   const [products, setProducts] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const data = [
       {sku: 10000, title: "Pear", weight: {value: 1, unit: "fruit"}, image: "/pear.png", backgroundColor: "#cc9900", price: 256, description: "Pears are fruits produced and consumed around the world, growing on a tree and harvested in late Summer into October.", quantity: 0 },
@@ -24,14 +25,28 @@ export default function Products() {
     setProducts(data);
   }, []);
 
+  const filteredProducts = products.filter((product) =>
+    product.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="flex flex-col justify-center m-12">
+
+    <div className="flex justify-between items-center">
       <h1 className="text-2xl uppercase italic mb-12 ml-12 tracking-widest font-thin">
         Unsere Produkte
       </h1>
-      
+      <input
+          type="text"
+          placeholder="nach was suchst du?"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="px-4 py-1 border border-gray-300 rounded-md mb-12 mr-12 italic "
+        />
+    </div>
+
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-10">
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <ProductCard key={product.sku} product={product} />
         ))}
       </div>
