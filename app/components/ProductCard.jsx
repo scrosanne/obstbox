@@ -14,12 +14,12 @@ export default function ProductCard({ product }) {
   return (
     <div
       key={product.sku}
-      className="relative bg-white shadow-md rounded-lg px-10 py-10"
+      className="relative bg-white border-solid border-2 border-slate-100 rounded-lg hover:shadow-lg px-10 py-10"
     >
       <img
         src={product.image}
         alt={product.title}
-        className="rounded-md h-48"
+        className="rounded-md h-24"
       />
       <div className="mt-4">
         <h1 className="text-lg uppercase font-bold">{product.title}</h1>

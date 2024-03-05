@@ -1,12 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import ProductCard from "./components/ProductCard";
-// import bb from "../public/blueberry.png";
-// import cherry from "../public/cherry.png";
-// import mango from "../public/mango.png";
-// import pf from "../public/passionfruit.png";
-// import pear from "../public/pear.png";
-// import pa from "../public/pineapple.png";
 
 export default function Products() {
   const [products, setProducts] = useState([]);

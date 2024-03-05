@@ -8,19 +8,15 @@ export default function CartItem({ product }) {
 
   return (
     <div
-      key={product.id}
-      className="relative flex items-center border-grey border-solid border-2 p-4"
+      key={product.sku}
+      className="relative flex items-center border-grey border-solid border-2 rounded-lg p-4"
     >
-      {/* Product Image on the Left */}
+      {/* LeftSide */}
       <div className="flex-shrink-0 mr-5">
-        <img
-          src={product.image}
-          alt={product.title}
-          className="w-24 h-24 object-cover"
-        />
+        <img src={product.image} alt={product.title} className="h-20" />
       </div>
 
-      {/* Product Details on the Right */}
+      {/* RightSide */}
       <div className="flex-grow">
         {/* Remove Button */}
         <div className="absolute top-2 right-2">
@@ -34,6 +30,7 @@ export default function CartItem({ product }) {
           </h1>
           <p>{product.title}</p>
           <p>{product.description}</p>
+          <p>Gesamt: {(product.price / 100) * product.quantity}€</p>
 
           {/* Quantity */}
           <div className="mt-2 flex items-center">
@@ -51,8 +48,6 @@ export default function CartItem({ product }) {
               <option value="5">5</option>
             </select>
           </div>
-
-          <p>Gesamt: {(product.price / 100) * product.quantity}€</p>
         </div>
       </div>
     </div>

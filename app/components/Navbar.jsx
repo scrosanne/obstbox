@@ -6,11 +6,9 @@ import { useCartContext } from "../context/cartContext";
 export default function Navbar() {
   const { cartItems } = useCartContext();
 
-  //add searchbar
-
   return (
     <div>
-      <nav className="flex items-center justify-between p-3 bg-neon italic tracking-widest">
+      <nav className="flex items-center justify-between p-3 px-6 bg-amber-200 italic tracking-widest">
         <div>
           <a>OBSTBOX</a>
         </div>
