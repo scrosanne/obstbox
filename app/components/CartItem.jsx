@@ -13,7 +13,11 @@ export default function CartItem({ product }) {
     >
       {/* LeftSide */}
       <div className="flex-shrink-0 mr-5">
-        <img src={product.image} alt={product.title} className="h-20" />
+        <img
+          src={product.image}
+          alt={product.title}
+          className="w-24 object-fill"
+        />
       </div>
 
       {/* RightSide */}
