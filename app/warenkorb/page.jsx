@@ -3,7 +3,7 @@ import { useCartContext } from "../context/cartContext";
 import CartItem from "../components/CartItem";
 
 export default function Cart() {
-  const { cartItems } = useCartContext();
+  const { cartItems, getTotalCart } = useCartContext();
 
   return (
     <div className="flex flex-col m-12">
@@ -19,6 +19,12 @@ export default function Cart() {
             <CartItem product={item} />
           </div>
         ))}
+      </div>
+
+      {/* total */}
+      <div className="flex justify-between items-center p-4 italic uppercase bg-gray-200 mt-4">
+        <p className="font-bold">Total</p>
+        <p>{getTotalCart()}€</p>
       </div>
     </div>
   );
