@@ -23,7 +23,9 @@ export default function ProductCard({ product }) {
       />
       <div className="mt-4">
         <h1 className="text-lg uppercase font-bold">{product.title}</h1>
-        <p className="mt-2 text-gray-600 text-sm">{product.description}</p>
+        <p className="mt-2 text-gray-600 text-sm">
+          {product.description?.slice(0, 60)}
+        </p>
         <p className="mt-2 text-gray-600">{product.price / 100}€</p>
       </div>
       <div className="mt-6 flex justify-between items-center">

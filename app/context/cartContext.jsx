@@ -39,9 +39,10 @@ export function CartContextProvider({ children }) {
   };
 
   const getTotalCart = () => {
-    return cartItems.reduce((total, currentItem) => {
+    const total = cartItems.reduce((total, currentItem) => {
       return total + (currentItem.quantity * currentItem.price) / 100;
     }, 0);
+    return total.toFixed(2);
   };
 
   return (
